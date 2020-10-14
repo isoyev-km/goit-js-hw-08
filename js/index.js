@@ -29,8 +29,6 @@ const doHtmlMarkup = gallery.map((image, index) => {
 
 galleryRef.append(...doHtmlMarkup);
 
-const galleryImage = document.querySelectorAll('.gallery__image');
-
 galleryRef.addEventListener('click', (event) => {
     event.preventDefault(); /* предотвращение перехода по ссылке */
     if(event.target.nodeName == 'IMG') {
