@@ -5,7 +5,7 @@ const galleryRef = document.querySelector(".js-gallery");
 const modalWrapperRef = document.querySelector(".js-lightbox");
 const modalContentRef = document.querySelector(".lightbox__content");
 const modalImageRef = document.querySelector(".lightbox__image");
-const exitModalBtnRef = document.querySelector('button[data-action="close-lightbox"]');
+const exitModalBtnRef = document.querySelector('.lightbox__button');
 
 const doHtmlMarkup = gallery.map((image, index) => {
     const li = document.createElement('li');
@@ -38,4 +38,9 @@ galleryRef.addEventListener('click', (event) => {
         modalImageRef.setAttribute('alt', event.target.getAttribute('alt'));
         modalWrapperRef.classList.add('is-open');
     }
-})
+}); 
+
+exitModalBtnRef.addEventListener('click', (event) => {
+    modalWrapperRef.classList.remove('is-open');
+    modalImageRef.setAttribute('src', "");
+});
