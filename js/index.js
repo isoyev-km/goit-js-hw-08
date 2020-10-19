@@ -32,13 +32,13 @@ galleryRef.append(...doHtmlMarkup);
 galleryRef.addEventListener('click', (event) => {
     event.preventDefault(); /* предотвращение перехода по ссылке */
     if(event.target.nodeName == 'IMG') {
-        modalImageRef.setAttribute('src', event.target.getAttribute('data-source'));
-        modalImageRef.setAttribute('alt', event.target.getAttribute('alt'));
+        modalImageRef.src = event.target.dataset.source;
+        modalImageRef.alt = event.target.alt;
         modalWrapperRef.classList.add('is-open');
     }
 }); 
 
 exitModalBtnRef.addEventListener('click', (event) => {
     modalWrapperRef.classList.remove('is-open');
-    modalImageRef.setAttribute('src', "");
+    modalImageRef.src = "";
 });
